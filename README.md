@@ -2,7 +2,7 @@ mmax
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module.
+> Compute module to find the maximum value in a window moving through an array of numeric values.
 
 
 ## Installation

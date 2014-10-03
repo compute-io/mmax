@@ -20,15 +20,18 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/compute-io/.git"
+    "url": "git://github.com/compute-io/mmax.git"
   },
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "maximum",
+    "window",
+    "moving"
   ],
   "bugs": {
-    "url": "https://github.com/compute-io//issues"
+    "url": "https://github.com/compute-io/mmax/issues"
   },
   "dependencies": {},
   "devDependencies": {
