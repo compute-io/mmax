@@ -19,14 +19,24 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'compute-mmax' );
+var mmax = require( 'compute-mmax' );
 ```
 
 
 ## Examples
 
 ``` javascript
-var lib = require( 'compute-mmax' );
+var data = new Array( 50 );
+for ( var i = 0; i < data.length; i++ ) {
+	data[i] = Math.random() * 100;
+}
+
+// Give function array of data and desired window size
+var outArr = mmax( data, 5 );
+
+for ( i = 0; i < outArr.length; i++) {
+	console.log( outArr[i] );
+}
 ```
 
 To run the example code from the top-level application directory,
