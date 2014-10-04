@@ -2,7 +2,7 @@ mmax
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module to find the maximum value in a window moving through an array of numeric values.
+> Compute module to find the maximum value in a window moving through a numeric array.
 
 
 ## Installation
@@ -78,17 +78,17 @@ Copyright &copy; 2014. Rebekah Smith.
 [npm-image]: http://img.shields.io/npm/v/compute-mmax.svg
 [npm-url]: https://npmjs.org/package/compute-mmax
 
-[travis-image]: http://img.shields.io/travis/compute-io//master.svg
-[travis-url]: https://travis-ci.org/compute-io/
+[travis-image]: http://img.shields.io/travis/compute-io/mmax/master.svg
+[travis-url]: https://travis-ci.org/compute-io/mmax
 
-[coveralls-image]: https://img.shields.io/coveralls/compute-io//master.svg
-[coveralls-url]: https://coveralls.io/r/compute-io/?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/compute-io/mmax/master.svg
+[coveralls-url]: https://coveralls.io/r/compute-io/mmax?branch=master
 
-[dependencies-image]: http://img.shields.io/david/compute-io/.svg
-[dependencies-url]: https://david-dm.org/compute-io/
+[dependencies-image]: http://img.shields.io/david/compute-io/mmax.svg
+[dependencies-url]: https://david-dm.org/compute-io/mmax
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/compute-io/.svg
-[dev-dependencies-url]: https://david-dm.org/dev/compute-io/
+[dev-dependencies-image]: http://img.shields.io/david/dev/compute-io/mmax.svg
+[dev-dependencies-url]: https://david-dm.org/dev/compute-io/mmax
 
-[github-issues-image]: http://img.shields.io/github/issues/compute-io/.svg
-[github-issues-url]: https://github.com/compute-io//issues
+[github-issues-image]: http://img.shields.io/github/issues/compute-io/mmax.svg
+[github-issues-url]: https://github.com/compute-io/mmax/issues

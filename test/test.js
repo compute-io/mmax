@@ -73,6 +73,20 @@ describe( 'compute-mmax', function tests() {
 
 	});
 
+	it( 'should throw an error if the window size is smaller than the array size', function test() {
+
+		var testdata = [3,5,6,8,7,5,4,3,2,5,6,7,8,5,4];
+
+		expect( testValue( 20 ) ).to.throw( TypeError );
+
+		function testValue( value ) {
+			return function() {
+				mmax( testdata , value);
+			}
+		}
+
+	});
+
 	it( 'should find the maximum value in the window', function test() {
 		var data, expected;
 
