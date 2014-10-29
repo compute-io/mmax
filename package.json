@@ -1,6 +1,6 @@
 {
   "name": "compute-mmax",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Computes a moving maximum over a numeric array.",
   "author": {
     "name": "Rebekah Smith",
