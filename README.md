@@ -1,8 +1,8 @@
-mmax
+Moving Maximum
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module to find the maximum value in a window moving through a numeric array.
+> Computes a moving maximum over a numeric array.
 
 
 ## Installation
@@ -23,20 +23,36 @@ var mmax = require( 'compute-mmax' );
 ```
 
 
+#### mmax( arr, window )
+
+Slides a `window` over a numeric `array` to compute a moving maximum.
+
+``` javascript
+var data = [ 1, 3, 2, 5, 4 ];
+
+mmax( data, 2 );
+// returns [ 3, 3, 5, 5 ]
+```
+
+Note: the returned `array` has length `L - W + 1`, where `L` is the length of the input `array` and `W` is the `window` size. 
+
+
 ## Examples
 
 ``` javascript
+var mmax = require( 'compute-mmax' );
+
+// Simulate some data...
 var data = new Array( 50 );
+
 for ( var i = 0; i < data.length; i++ ) {
-	data[i] = Math.random() * 100;
+	data[ i ] = Math.random() * 100;
 }
 
-// Give function array of data and desired window size
-var outArr = mmax( data, 5 );
+// Compute the moving maximum:
+var arr = mmax( data, 7 );
 
-for ( i = 0; i < outArr.length; i++) {
-	console.log( outArr[i] );
-}
+console.log( arr.join( '\n' ) );
 ```
 
 To run the example code from the top-level application directory,
@@ -70,7 +86,7 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
