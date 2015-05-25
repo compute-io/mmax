@@ -1,3 +1,5 @@
+'use strict';
+
 var mmax = require( './../lib' );
 
 // Simulate some data...
