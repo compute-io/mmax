@@ -23,7 +23,7 @@ var mmax = require( 'compute-mmax' );
 ```
 
 
-#### mmax( arr, window )
+#### mmax( arr, window[, options] )
 
 Slides a `window` over a numeric `array` to compute a moving maximum.
 
@@ -34,7 +34,47 @@ mmax( data, 2 );
 // returns [ 3, 3, 5, 5 ]
 ```
 
-Note: the returned `array` has length `L - W + 1`, where `L` is the length of the input `array` and `W` is the `window` size. 
+The function accepts two `options`:
+
+*  __copy__: `boolean` indicating whether to return a new `array` containing the moving maxima. Default: `true`.
+*  __accessor__: accessor `function` for accessing numerical values in object `arrays`.
+
+To mutate the input `array` (e.g. when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
+
+``` javascript
+var data = [ 1, 3, 2, 4, 5 ];
+
+var values = mmin( data, 2, {
+	'copy': false
+});
+//returns [ 3, 3, 5, 5 ]
+
+console.log( data === values );
+//returns true
+```
+
+For non-numeric `arrays`, provide an accessor `function` for accessing numeric `array` values.
+
+``` javascript
+var arr = [
+	{'x':1},
+	{'x':3},
+	{'x':2},
+	{'x':4},
+	{'x':5}
+];
+
+function getValue( d ) {
+	return d.x;
+}
+
+var values = mmean( arr, 2, {
+	'accessor': getValue
+});
+// returns [ 3, 3, 5, 5 ]
+```
+
+Note: the returned `array` has length `L - W + 1`, where `L` is the length of the input `array` and `W` is the `window` size.
 
 
 ## Examples
@@ -66,7 +106,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -90,15 +130,16 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Rebekah Smith.
+Copyright &copy; 2014-2015. The Compute.io Authors.
+
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-mmax.svg
